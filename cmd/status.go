@@ -23,7 +23,7 @@ var (
 		RunE: func(cmd *cobra.Command, args []string) error {
 			fs := afero.NewOsFs()
 
-			c, err := pkg.ReadConfig(fs, configFile)
+			c, err := pkg.GetStatus(fs, configFile)
 			if err != nil {
 				return fmt.Errorf("unable to read config: %w", err)
 			}
